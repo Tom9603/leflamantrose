@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: images/gallery
+public_folder: /images/gallery
+
+locale: fr
+
+collections:
+  - name: gallery
+    label: Galerie
+    files:
+      - name: gallery_items
+        label: Photos de la galerie
+        file: gallery.json
+        fields:
+          - name: items
+            label: Photos
+            widget: list
+            label_singular: Photo
+            fields:
+              - { name: title,    label: Titre,     widget: string }
+              - name: category
+                label: Catégorie
+                widget: select
+                options:
+                  - { label: Anniversaire, value: anniversaire }
+                  - { label: Mariage,      value: mariage }
+                  - { label: Biscuits,     value: biscuit }
+                  - { label: Brunch,       value: brunch }
+              - name: image
+                label: Photo
+                widget: image
+                required: false
+                default: ""
+              - name: size
+                label: Format
+                widget: select
+                options:
+                  - { label: "Normal",                  value: normal }
+                  - { label: "Grand (hauteur ×2)",      value: tall }
+                  - { label: "Large (largeur ×2)",      value: wide }
+                default: normal

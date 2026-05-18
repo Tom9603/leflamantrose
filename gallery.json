@@ -1,0 +1,12 @@
+{
+  "items": [
+    { "title": "Licorne pastel",          "category": "anniversaire", "size": "tall",   "image": "" },
+    { "title": "Pièce montée fleurie",    "category": "mariage",      "size": "normal", "image": "" },
+    { "title": "Sablés personnalisés",    "category": "biscuit",      "size": "normal", "image": "" },
+    { "title": "Layer cake fruits rouges","category": "anniversaire", "size": "wide",   "image": "" },
+    { "title": "Sirène marine",           "category": "anniversaire", "size": "normal", "image": "" },
+    { "title": "Plateau gourmand",        "category": "brunch",       "size": "tall",   "image": "" },
+    { "title": "Number cake",             "category": "anniversaire", "size": "normal", "image": "" },
+    { "title": "Gâteau bohème",           "category": "mariage",      "size": "normal", "image": "" }
+  ]
+}
