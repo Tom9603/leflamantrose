@@ -54,12 +54,24 @@ document.querySelectorAll('.reveal').forEach(el => {
 });
 
 
+/* Back to top
+   ========================================================================== */
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
 /* Gallery — dynamic from gallery.json + categories.json
    ========================================================================== */
 const galleryGrid = document.querySelector('.gallery-grid');
 const filterBtns  = document.querySelectorAll('.filter-btn');
 let allItems  = [];
 let catLabels = {};
+const GALLERY_LIMIT = 4;
 
 const PLACEHOLDER = `<div class="gallery-placeholder"><svg width="80" height="80" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M50 20 Q62 18 68 28 Q70 38 60 42 L62 50 Q72 52 75 62 Q72 75 60 78 L52 78 L52 70 Q60 68 62 62 Q60 56 52 56 L52 50 Q54 44 50 40 Q42 35 42 28 Q44 22 50 20 Z" stroke="currentColor" stroke-width="1.5"/></svg></div>`;
 
@@ -86,14 +98,40 @@ function buildItem(item) {
   return el;
 }
 
-function renderGallery(filter = 'all') {
+function renderGallery(filter = 'all', showAll = false) {
   galleryGrid.innerHTML = '';
+
+  /* Retire l'éventuel bouton voir plus existant */
+  const existing = document.querySelector('.gallery-more-btn');
+  if (existing) existing.remove();
+
   const list = filter === 'all' ? allItems : allItems.filter(i => i.category === filter);
-  list.forEach((item, idx) => {
+  const visible = showAll ? list : list.slice(0, GALLERY_LIMIT);
+
+  visible.forEach((item, idx) => {
     const el = buildItem(item);
     galleryGrid.appendChild(el);
     setTimeout(() => itemObserver.observe(el), idx * 40);
   });
+
+  /* Bouton voir plus / réduire */
+  if (list.length > GALLERY_LIMIT) {
+    const btn = document.createElement('button');
+    btn.className = 'gallery-more-btn';
+
+    if (showAll) {
+      btn.textContent = 'Réduire ↑';
+      btn.addEventListener('click', () => {
+        renderGallery(filter, false);
+        document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+      });
+    } else {
+      btn.textContent = `Voir plus — ${list.length - GALLERY_LIMIT} photos`;
+      btn.addEventListener('click', () => renderGallery(filter, true));
+    }
+
+    galleryGrid.insertAdjacentElement('afterend', btn);
+  }
 }
 
 Promise.all([
