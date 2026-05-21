@@ -171,8 +171,8 @@ document.querySelectorAll('.specialty[data-gallery-filter]').forEach(card => {
     if (filter === 'contact') {
       document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
     } else {
-      const targetBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
-      if (targetBtn) targetBtn.click();
+      const allBtn = document.querySelector('.filter-btn[data-filter="all"]');
+      if (allBtn) allBtn.click();
       document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
     }
   });
