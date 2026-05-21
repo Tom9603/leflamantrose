@@ -980,14 +980,13 @@ section {
 
 .contact-blocks-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 2.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2rem;
   row-gap: 2rem;
-  margin-top: 3rem;
-  margin-bottom: 2.5rem;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 3.5rem;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(245, 225, 220, 0.1);
+  padding-top: 3rem;
 }
 
 .contact-block {
@@ -1475,6 +1474,7 @@ footer {
     gap: 3rem;
   }
   .contact-map { aspect-ratio: 4/3; }
+  .contact-blocks-grid { grid-template-columns: repeat(2, 1fr); }
 
 }
 
