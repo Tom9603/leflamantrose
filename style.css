@@ -977,14 +977,35 @@ section {
   font-size: 1rem;
 }
 
+.contact-blocks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: 2rem;
+}
+
 .contact-block {
-  margin-bottom: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding: 1.5rem 0;
   border-bottom: 1px solid rgba(245, 225, 220, 0.15);
 }
 
+.contact-block:nth-child(odd) {
+  padding-right: 2rem;
+  border-right: 1px solid rgba(245, 225, 220, 0.15);
+}
+
+.contact-block:nth-child(even) {
+  padding-left: 2rem;
+}
+
+.contact-block-full {
+  grid-column: 1 / -1;
+  padding-right: 0;
+  border-right: none;
+}
+
 .contact-block:last-child {
-  border: none;
+  border-bottom: none;
 }
 
 .contact-label {
