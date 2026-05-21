@@ -219,6 +219,26 @@ fetch('about.json')
   .catch(() => { /* pas de photo, on garde le fond dégradé */ });
 
 
+/* Contact info — dynamic from contact.json
+   ========================================================================== */
+fetch('contact.json')
+  .then(r => r.json())
+  .then(({ address_text, address_maps, phone_text, phone_tel, email }) => {
+    const addr = document.getElementById('ci-address');
+    if (addr) { addr.href = address_maps; addr.textContent = address_text; }
+
+    const phone = document.getElementById('ci-phone');
+    if (phone) { phone.href = phone_tel; phone.textContent = phone_text; }
+
+    const callBtn = document.getElementById('ci-call-btn');
+    if (callBtn) callBtn.href = phone_tel;
+
+    const emailEl = document.getElementById('ci-email');
+    if (emailEl) { emailEl.href = 'mailto:' + email; emailEl.textContent = email; }
+  })
+  .catch(() => { /* valeurs HTML utilisées en fallback */ });
+
+
 /* Netlify Identity — redirect to admin after login
    ========================================================================== */
 if (window.netlifyIdentity) {

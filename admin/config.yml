@@ -32,6 +32,31 @@ collections:
             widget: string
             default: "Brunchs"
 
+      - name: contact_info
+        label: "Informations de contact"
+        file: contact.json
+        fields:
+          - name: address_text
+            label: Adresse (affichée)
+            widget: string
+            default: "9 Route de Brest, 29000 Quimper"
+          - name: address_maps
+            label: Lien Google Maps
+            widget: string
+            default: "https://maps.google.com/?q=9+Rte+de+Brest,+29000+Quimper"
+          - name: phone_text
+            label: Téléphone (affiché)
+            widget: string
+            default: "06 17 51 38 21"
+          - name: phone_tel
+            label: Lien téléphone (format tel:+33...)
+            widget: string
+            default: "tel:+33617513821"
+          - name: email
+            label: Email
+            widget: string
+            default: "leflamantrosepatisserie@gmail.com"
+
       - name: about
         label: "Section L'Atelier"
         file: about.json

@@ -6,6 +6,52 @@
   <meta name="description" content="Le Flamant Rose · Pâtisserie artisanale à Quimper. Gâteaux personnalisés, pièces montées, biscuits et brunchs faits maison par Clémentine Tcherepoff, depuis 2008.">
   <title>Le Flamant Rose · Pâtisserie artisanale à Quimper</title>
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://leflamantrose.netlify.app/">
+  <meta property="og:title" content="Le Flamant Rose · Pâtisserie artisanale à Quimper">
+  <meta property="og:description" content="Gâteaux personnalisés, pièces montées, biscuits et brunchs faits maison à Quimper. Commandez votre création sur mesure auprès de Clémentine Tcherepoff.">
+  <meta property="og:image" content="https://leflamantrose.netlify.app/logo.png">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Le Flamant Rose">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Le Flamant Rose · Pâtisserie artisanale à Quimper">
+  <meta name="twitter:description" content="Gâteaux personnalisés, pièces montées, biscuits et brunchs faits maison à Quimper.">
+  <meta name="twitter:image" content="https://leflamantrose.netlify.app/logo.png">
+
+  <!-- Schema.org LocalBusiness — à mettre à jour si changement de domaine -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Le Flamant Rose",
+    "description": "Pâtisserie artisanale à Quimper. Gâteaux personnalisés, pièces montées, biscuits et brunchs faits maison par Clémentine Tcherepoff, depuis 2008.",
+    "url": "https://leflamantrose.netlify.app",
+    "telephone": "+33617513821",
+    "email": "leflamantrosepatisserie@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9 Route de Brest",
+      "addressLocality": "Quimper",
+      "postalCode": "29000",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.9998,
+      "longitude": -4.1246
+    },
+    "image": "https://leflamantrose.netlify.app/logo.png",
+    "priceRange": "€€",
+    "servesCuisine": "Pâtisserie française",
+    "foundingDate": "2008",
+    "sameAs": [
+      "https://instagram.com/leflamantrosepatisserie",
+      "https://www.facebook.com/leflamantrosepatisserie/?locale=fr_FR"
+    ]
+  }
+  </script>
+
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -312,7 +358,7 @@
           </div>
           <div class="form-actions">
             <button type="submit" class="form-submit">Envoyer <span>→</span></button>
-            <a href="tel:+33617513821" class="form-link-btn">Appeler directement</a>
+            <a id="ci-call-btn" href="tel:+33617513821" class="form-link-btn">Appeler directement</a>
           </div>
         </form>
       </div>
@@ -334,17 +380,17 @@
 
       <div class="contact-block">
         <div class="contact-label">Adresse</div>
-        <a href="https://maps.google.com/?q=9+Rte+de+Brest,+29000+Quimper" class="contact-value" target="_blank" rel="noopener">9 Route de Brest, 29000 Quimper</a>
+        <a id="ci-address" href="https://maps.google.com/?q=9+Rte+de+Brest,+29000+Quimper" class="contact-value" target="_blank" rel="noopener">9 Route de Brest, 29000 Quimper</a>
       </div>
 
       <div class="contact-block">
         <div class="contact-label">Téléphone</div>
-        <a href="tel:+33617513821" class="contact-value">06 17 51 38 21</a>
+        <a id="ci-phone" href="tel:+33617513821" class="contact-value">06 17 51 38 21</a>
       </div>
 
       <div class="contact-block">
         <div class="contact-label">Email</div>
-        <a href="mailto:leflamantrosepatisserie@gmail.com" class="contact-value">leflamantrosepatisserie@gmail.com</a>
+        <a id="ci-email" href="mailto:leflamantrosepatisserie@gmail.com" class="contact-value">leflamantrosepatisserie@gmail.com</a>
       </div>
 
       <div class="contact-block">
