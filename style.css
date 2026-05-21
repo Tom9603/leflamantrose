@@ -473,13 +473,15 @@ section {
 }
 
 .section-tag::before {
-  content: '✦';
+  content: '';
   display: inline-block;
-  font-size: 0.45rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--rose-framboise);
   vertical-align: middle;
   margin-right: 0.85rem;
-  color: var(--rose-framboise);
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
 .section-title {
@@ -828,13 +830,15 @@ section {
 }
 
 .reviews-header .section-tag::after {
-  content: '✦';
+  content: '';
   display: inline-block;
-  font-size: 0.45rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--rose-framboise);
   vertical-align: middle;
   margin-left: 0.85rem;
-  color: var(--rose-framboise);
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
 .reviews-rating {
