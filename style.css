@@ -1349,6 +1349,23 @@ footer {
   opacity: 0.5;
 }
 
+.footer-by {
+  margin-top: 0.5rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  opacity: 0.35;
+}
+
+.footer-by a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.footer-by a:hover {
+  opacity: 0.7;
+}
+
 
 /* Scroll reveal animations
    ========================================================================== */
