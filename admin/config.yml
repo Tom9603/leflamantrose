@@ -8,6 +8,20 @@ public_folder: /images/gallery
 locale: fr
 
 collections:
+  - name: settings
+    label: Paramètres du site
+    files:
+      - name: about
+        label: "Section L'Atelier"
+        file: about.json
+        fields:
+          - name: photo
+            label: Photo de l'atelier
+            widget: image
+            required: false
+            default: ""
+            hint: "Photo de Clémentine ou de l'atelier — format portrait recommandé"
+
   - name: gallery
     label: Galerie
     files:

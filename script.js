@@ -149,6 +149,25 @@ if (contactForm) {
 }
 
 
+/* About photo — dynamic from about.json
+   ========================================================================== */
+fetch('about.json')
+  .then(r => r.json())
+  .then(({ photo }) => {
+    if (photo) {
+      const visual = document.getElementById('about-visual');
+      if (visual) {
+        const img = document.createElement('img');
+        img.src = photo;
+        img.alt = "L'atelier de Clémentine";
+        img.className = 'about-photo';
+        visual.prepend(img);
+      }
+    }
+  })
+  .catch(() => { /* pas de photo, on garde le fond dégradé */ });
+
+
 /* Netlify Identity — redirect to admin after login
    ========================================================================== */
 if (window.netlifyIdentity) {
