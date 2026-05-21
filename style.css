@@ -1355,6 +1355,8 @@ footer {
     grid-template-columns: 36px 1fr;
     grid-template-rows: auto auto;
     column-gap: 1.25rem;
+    row-gap: 1px;
+    align-content: center;
     align-items: center;
     padding: 0 1.5rem;
     text-align: left;
@@ -1380,10 +1382,9 @@ footer {
     grid-column: 2;
     grid-row: 2;
     font-size: 0.78rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     margin: 0;
   }
   .specialty-cta { display: none; }
