@@ -1,10 +1,4 @@
-/* ==========================================================================
-   Le Flamant Rose — Styles
-   ========================================================================== */
 
-
-/* Reset & Base
-   ========================================================================== */
 *,
 *::before,
 *::after {
@@ -44,9 +38,6 @@ button {
   background: none;
 }
 
-
-/* Palette
-   ========================================================================== */
 :root {
   --rose-pale: #f5e1dc;
   --rose-poudre: #ebc9c0;
@@ -60,9 +51,6 @@ button {
   --gold: #c9a96e;
 }
 
-
-/* Header & Navigation
-   ========================================================================== */
 header {
   position: fixed;
   top: 0;
@@ -133,7 +121,6 @@ nav a {
   transition: color 0.3s;
 }
 
-/* Wavy underline on hover */
 nav a::after {
   content: '';
   position: absolute;
@@ -157,7 +144,6 @@ nav a:hover::after {
   transform: scaleX(1);
 }
 
-/* Mobile burger */
 .burger {
   display: none;
   flex-direction: column;
@@ -185,9 +171,6 @@ nav a:hover::after {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-
-/* Hero
-   ========================================================================== */
 .hero {
   min-height: 100vh;
   position: relative;
@@ -312,7 +295,6 @@ nav a:hover::after {
   display: inline-block;
 }
 
-/* Hand-drawn wavy underline */
 .hero h1 .underline::after {
   content: '';
   position: absolute;
@@ -421,7 +403,6 @@ nav a:hover::after {
   transform: translateX(4px);
 }
 
-/* Scroll indicator */
 .hero-scroll {
   position: absolute;
   bottom: clamp(1.5rem, 3vh, 2.5rem);
@@ -452,9 +433,6 @@ nav a:hover::after {
   50% { transform: scaleY(1); opacity: 1; }
 }
 
-
-/* Sections — base
-   ========================================================================== */
 section {
   padding: 7rem 3rem;
   position: relative;
@@ -506,9 +484,6 @@ section {
   margin-bottom: 4rem;
 }
 
-
-/* About
-   ========================================================================== */
 .about {
   background: var(--cream);
 }
@@ -597,9 +572,6 @@ section {
   margin-top: 0.25rem;
 }
 
-
-/* Specialties
-   ========================================================================== */
 .specialties {
   background: var(--cream-warm);
 }
@@ -691,9 +663,6 @@ section {
   transform: translateY(0);
 }
 
-
-/* Gallery
-   ========================================================================== */
 .gallery {
   background: var(--cream);
   padding-bottom: 9rem;
@@ -814,9 +783,6 @@ section {
   font-size: 1.3rem;
 }
 
-
-/* Reviews
-   ========================================================================== */
 .reviews {
   background: linear-gradient(180deg, var(--cream) 0%, var(--rose-pale) 100%);
 }
@@ -937,9 +903,6 @@ section {
   letter-spacing: 0.1em;
 }
 
-
-/* Contact
-   ========================================================================== */
 .contact {
   background: var(--ink);
   color: var(--cream);
@@ -1224,9 +1187,6 @@ a.contact-value:hover {
   color: var(--rose-poudre);
 }
 
-
-/* Back to top
-   ========================================================================== */
 .back-to-top {
   position: fixed;
   bottom: 3.5rem;
@@ -1267,9 +1227,6 @@ a.contact-value:hover {
   }
 }
 
-
-/* Gallery voir plus
-   ========================================================================== */
 .gallery-more-btn {
   display: block;
   margin: 2.5rem auto 0;
@@ -1291,9 +1248,6 @@ a.contact-value:hover {
   color: var(--cream);
 }
 
-
-/* Footer
-   ========================================================================== */
 footer {
   background: var(--ink);
   color: rgba(245, 225, 220, 0.6);
@@ -1366,9 +1320,6 @@ footer {
   opacity: 0.7;
 }
 
-
-/* Scroll reveal animations
-   ========================================================================== */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -1396,12 +1347,8 @@ footer {
   transform: translateX(0);
 }
 
-
-/* Responsive
-   ========================================================================== */
 @media (max-width: 900px) {
 
-  /* Header */
   header { padding: 1rem 1.5rem; }
   header.scrolled { padding: 0.75rem 1.5rem; }
   .burger { display: flex; }
@@ -1420,10 +1367,8 @@ footer {
   nav.open { transform: translateX(0); }
   nav ul { flex-direction: column; gap: 1.5rem; }
 
-  /* Sections */
   section { padding: 4rem 1.5rem; }
 
-  /* Hero */
   .hero { padding: 80px 1.5rem 140px; }
   .hero-photo { width: 110px; height: 110px; }
   .hero-photo-wrap { margin-bottom: 0.75rem; }
@@ -1434,14 +1379,12 @@ footer {
   .hero-note { margin-bottom: 1.25rem; }
   .hero-scroll { bottom: 1.5rem; }
 
-  /* About */
   .about-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
   .about-visual { aspect-ratio: 4/3; }
 
-  /* Specialties — 1 colonne, layout horizontal compact, hauteur fixe */
   .specialties-grid {
     grid-template-columns: 1fr;
     grid-auto-rows: 100px;
@@ -1484,17 +1427,14 @@ footer {
   }
   .specialty-cta { display: none; }
 
-  /* Gallery */
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 220px;
   }
   .gallery-item.wide { grid-column: span 2; }
 
-  /* Reviews */
   .reviews-grid { grid-template-columns: 1fr; }
 
-  /* Contact */
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -1506,19 +1446,15 @@ footer {
 
 @media (max-width: 560px) {
 
-  /* Hero */
   .hero { padding: 70px 1.25rem 130px; }
   .hero-photo { width: 100px; height: 100px; }
   .hero-desc { font-size: 0.95rem; }
   .hero-note { font-size: 1.05rem; }
 
-  /* Contact blocks — 1 colonne sur très petit écran */
   .contact-blocks-grid { grid-template-columns: 1fr; }
 
-  /* Boutons formulaire — empilés */
   .form-actions { grid-template-columns: 1fr; }
 
-  /* Galerie — 1 colonne */
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-item.wide,
   .gallery-item.tall {
