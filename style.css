@@ -1017,6 +1017,27 @@ a.contact-value:hover {
   margin-top: 0.5rem;
 }
 
+.contact-social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.contact-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--rose-poudre);
+  transition: opacity 0.3s;
+}
+
+.contact-social-link:hover {
+  opacity: 0.7;
+}
+
 .contact-map {
   aspect-ratio: 1;
   background: linear-gradient(135deg, var(--ink), #2a1d20);
