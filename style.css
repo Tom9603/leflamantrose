@@ -1341,7 +1341,7 @@ footer {
   .hero h1 .script { margin-top: 0.75rem; }
   .hero-desc { margin-bottom: 1rem; }
   .hero-note { margin-bottom: 1.25rem; }
-  .hero-scroll { bottom: 3.5rem; }
+  .hero-scroll { bottom: 1.5rem; }
 
   /* About */
   .about-grid {
