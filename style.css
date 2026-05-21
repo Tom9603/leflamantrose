@@ -1092,7 +1092,7 @@ a.contact-value:hover {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   cursor: pointer;
-  border: none;
+  border: 1.5px solid transparent;
   transition: all 0.3s;
 }
 
