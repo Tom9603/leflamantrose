@@ -181,28 +181,4 @@ if (window.netlifyIdentity) {
 }
 
 
-/* Leaflet map
-   ========================================================================== */
-const map = L.map('map', {
-  center: [47.9960, -4.0975],
-  zoom: 15,
-  zoomControl: true,
-  scrollWheelZoom: false,
-  dragging: true
-});
-
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
-  maxZoom: 19
-}).addTo(map);
-
-const markerIcon = L.divIcon({
-  className: '',
-  html: '<div class="marker-pin"></div>',
-  iconSize: [14, 14],
-  iconAnchor: [7, 7]
-});
-
-L.marker([47.9960, -4.0975], { icon: markerIcon }).addTo(map);
-
 
