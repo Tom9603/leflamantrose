@@ -187,25 +187,3 @@ const markerIcon = L.divIcon({
 L.marker([47.9960, -4.0975], { icon: markerIcon }).addTo(map);
 
 
-/* Gallery — filter buttons
-   ========================================================================== */
-const filterBtns = document.querySelectorAll('.filter-btn');
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const filter = btn.dataset.filter;
-
-    galleryItems.forEach(item => {
-      if (filter === 'all' || item.dataset.cat === filter) {
-        item.style.display = '';
-        setTimeout(() => item.classList.add('visible'), 50);
-      } else {
-        item.classList.remove('visible');
-        setTimeout(() => item.style.display = 'none', 500);
-      }
-    });
-  });
-});
