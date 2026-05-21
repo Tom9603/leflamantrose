@@ -1333,9 +1333,10 @@ footer {
   section { padding: 4rem 1.5rem; }
 
   /* Hero */
-  .hero { padding: 80px 1.5rem 100px; }
+  .hero { padding: 80px 1.5rem 140px; }
   .hero-photo { width: 120px; height: 120px; }
   .hero h1 { font-size: clamp(2rem, 7vw, 3rem); }
+  .hero-scroll { bottom: 3.5rem; }
 
   /* About */
   .about-grid {
@@ -1409,7 +1410,7 @@ footer {
 @media (max-width: 560px) {
 
   /* Hero */
-  .hero { padding: 70px 1.25rem 90px; }
+  .hero { padding: 70px 1.25rem 130px; }
   .hero-photo { width: 100px; height: 100px; }
   .hero-desc { font-size: 0.95rem; }
   .hero-note { font-size: 1.05rem; }
