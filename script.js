@@ -54,11 +54,12 @@ document.querySelectorAll('.reveal').forEach(el => {
 });
 
 
-/* Gallery — dynamic from gallery.json
+/* Gallery — dynamic from gallery.json + categories.json
    ========================================================================== */
 const galleryGrid = document.querySelector('.gallery-grid');
 const filterBtns  = document.querySelectorAll('.filter-btn');
-let allItems = [];
+let allItems  = [];
+let catLabels = {};
 
 const PLACEHOLDER = `<div class="gallery-placeholder"><svg width="80" height="80" viewBox="0 0 100 100" fill="none" aria-hidden="true"><path d="M50 20 Q62 18 68 28 Q70 38 60 42 L62 50 Q72 52 75 62 Q72 75 60 78 L52 78 L52 70 Q60 68 62 62 Q60 56 52 56 L52 50 Q54 44 50 40 Q42 35 42 28 Q44 22 50 20 Z" stroke="currentColor" stroke-width="1.5"/></svg></div>`;
 
@@ -75,10 +76,11 @@ function buildItem(item) {
   const el = document.createElement('div');
   el.className = 'gallery-item' + (item.size === 'tall' ? ' tall' : '') + (item.size === 'wide' ? ' wide' : '');
   el.dataset.cat = item.category;
+  const label = catLabels[item.category] || item.category;
   el.innerHTML = `
     ${item.image ? `<img src="${item.image}" alt="${item.title}" class="gallery-img">` : PLACEHOLDER}
     <div class="gallery-item-label">
-      <div class="category">${item.category}</div>
+      <div class="category">${label}</div>
       <div class="title">${item.title}</div>
     </div>`;
   return el;
@@ -94,11 +96,22 @@ function renderGallery(filter = 'all') {
   });
 }
 
-fetch('gallery.json')
-  .then(r => r.json())
-  .then(({ items }) => {
-    allItems = items || [];
+Promise.all([
+  fetch('gallery.json').then(r => r.json()),
+  fetch('categories.json').then(r => r.json()).catch(() => ({}))
+])
+  .then(([galleryData, cats]) => {
+    catLabels = cats;
+
+    /* Met à jour les labels des boutons filtres */
+    filterBtns.forEach(btn => {
+      const f = btn.dataset.filter;
+      if (f !== 'all' && cats[f]) btn.textContent = cats[f];
+    });
+
+    allItems = galleryData.items || [];
     renderGallery();
+
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));

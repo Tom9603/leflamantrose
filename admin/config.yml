@@ -11,6 +11,27 @@ collections:
   - name: settings
     label: Paramètres du site
     files:
+      - name: categories
+        label: "Noms des catégories"
+        file: categories.json
+        fields:
+          - name: anniversaire
+            label: "Catégorie 1 (bouton + étiquettes)"
+            widget: string
+            default: "Anniversaires"
+          - name: mariage
+            label: "Catégorie 2 (bouton + étiquettes)"
+            widget: string
+            default: "Mariages"
+          - name: biscuit
+            label: "Catégorie 3 (bouton + étiquettes)"
+            widget: string
+            default: "Biscuits"
+          - name: brunch
+            label: "Catégorie 4 (bouton + étiquettes)"
+            widget: string
+            default: "Brunchs"
+
       - name: about
         label: "Section L'Atelier"
         file: about.json
