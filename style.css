@@ -15,6 +15,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -1343,9 +1344,25 @@ footer {
   }
   .about-visual { aspect-ratio: 4/3; }
 
-  /* Specialties — 2 colonnes sur mobile */
-  .specialties-grid { grid-template-columns: repeat(2, 1fr); }
-  .specialty { padding: 1.75rem 1.25rem; }
+  /* Specialties — 1 colonne, layout horizontal compact */
+  .specialties-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .specialty {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+  }
+  .specialty-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+  .specialty-icon svg { width: 32px; height: 32px; }
+  .specialty h3 { font-size: 1.15rem; margin-bottom: 0.3rem; }
+  .specialty p   { font-size: 0.82rem; }
+  .specialty-cta { display: none; }
 
   /* Gallery */
   .gallery-grid {
@@ -1373,10 +1390,6 @@ footer {
   .hero-photo { width: 100px; height: 100px; }
   .hero-desc { font-size: 0.95rem; }
   .hero-note { font-size: 1.05rem; }
-
-  /* Specialties — 2 colonnes conservées, texte réduit */
-  .specialty h3 { font-size: 1rem; }
-  .specialty p  { font-size: 0.85rem; }
 
   /* Contact blocks — 1 colonne sur très petit écran */
   .contact-blocks-grid { grid-template-columns: 1fr; }
