@@ -479,7 +479,7 @@ section {
   height: 5px;
   border-radius: 50%;
   background: var(--rose-framboise);
-  vertical-align: middle;
+  vertical-align: 0.2em;
   margin-right: 0.85rem;
   opacity: 0.85;
 }
@@ -836,7 +836,7 @@ section {
   height: 5px;
   border-radius: 50%;
   background: var(--rose-framboise);
-  vertical-align: middle;
+  vertical-align: 0.2em;
   margin-left: 0.85rem;
   opacity: 0.85;
 }
