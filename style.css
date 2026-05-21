@@ -253,7 +253,7 @@ nav a:hover::after {
 }
 
 .hero-photo-wrap {
-  margin-bottom: 1.25rem;
+  margin-bottom: clamp(0.75rem, 1.5vh, 1.25rem);
   opacity: 0;
   animation: fadeIn 1s 0.1s forwards;
 }
@@ -272,7 +272,7 @@ nav a:hover::after {
   font-family: 'Caveat', cursive;
   font-size: 1.5rem;
   color: var(--ink-soft);
-  margin-bottom: 0.75rem;
+  margin-bottom: clamp(0.4rem, 1vh, 0.75rem);
   transform: rotate(-2deg);
   display: inline-block;
   opacity: 0;
@@ -286,7 +286,7 @@ nav a:hover::after {
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--ink);
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(0.75rem, 2vh, 1.5rem);
   position: relative;
 }
 
@@ -301,7 +301,7 @@ nav a:hover::after {
   font-family: 'Homemade Apple', cursive;
   color: var(--rose-framboise);
   font-size: 0.95em;
-  margin-top: 1.1rem;
+  margin-top: clamp(0.5rem, 1.5vh, 1.1rem);
   line-height: 1.6;
   opacity: 0;
   animation: fadeRise 1.2s 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -345,7 +345,7 @@ nav a:hover::after {
   line-height: 1.6;
   color: var(--ink-soft);
   max-width: 540px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto clamp(0.75rem, 2vh, 1.5rem);
   opacity: 0;
   animation: fadeIn 1s 1.2s forwards;
 }
@@ -362,7 +362,7 @@ nav a:hover::after {
   color: var(--rose-framboise);
   line-height: 1.3;
   width: fit-content;
-  margin: 0 auto 2rem;
+  margin: 0 auto clamp(1rem, 2.5vh, 2rem);
   transform: rotate(-0.5deg);
   display: block;
   position: relative;
@@ -424,7 +424,7 @@ nav a:hover::after {
 /* Scroll indicator */
 .hero-scroll {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: clamp(1.5rem, 3vh, 2.5rem);
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.7rem;
