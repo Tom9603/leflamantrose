@@ -1310,55 +1310,86 @@ footer {
 /* Responsive
    ========================================================================== */
 @media (max-width: 900px) {
+
+  /* Header */
   header { padding: 1rem 1.5rem; }
   header.scrolled { padding: 0.75rem 1.5rem; }
-
   .burger { display: flex; }
-
   nav {
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 320px;
+    top: 0; right: -100%;
+    width: 80%; max-width: 320px;
     height: 100vh;
     background: var(--cream);
     padding: 6rem 2rem 2rem;
     transition: right 0.4s ease;
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
   }
-
   nav.open { right: 0; }
-
   nav ul { flex-direction: column; gap: 1.5rem; }
 
-  section { padding: 5rem 1.5rem; }
+  /* Sections */
+  section { padding: 4rem 1.5rem; }
 
-  .about-grid,
-  .contact-grid {
+  /* Hero */
+  .hero { padding: 80px 1.5rem 100px; }
+  .hero-photo { width: 120px; height: 120px; }
+  .hero h1 { font-size: clamp(2rem, 7vw, 3rem); }
+
+  /* About */
+  .about-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
   }
+  .about-visual { aspect-ratio: 4/3; }
 
-  .specialties-grid { grid-template-columns: 1fr; }
+  /* Specialties — 2 colonnes sur mobile */
+  .specialties-grid { grid-template-columns: repeat(2, 1fr); }
+  .specialty { padding: 1.75rem 1.25rem; }
 
+  /* Gallery */
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 220px;
   }
-
   .gallery-item.wide { grid-column: span 2; }
 
+  /* Reviews */
   .reviews-grid { grid-template-columns: 1fr; }
 
-  .footer-content { flex-direction: column; }
+  /* Contact */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .contact-map { aspect-ratio: 4/3; }
+
 }
 
 @media (max-width: 560px) {
+
+  /* Hero */
+  .hero { padding: 70px 1.25rem 90px; }
+  .hero-photo { width: 100px; height: 100px; }
+  .hero-desc { font-size: 0.95rem; }
+  .hero-note { font-size: 1.05rem; }
+
+  /* Specialties — 2 colonnes conservées, texte réduit */
+  .specialty h3 { font-size: 1rem; }
+  .specialty p  { font-size: 0.85rem; }
+
+  /* Contact blocks — 1 colonne sur très petit écran */
+  .contact-blocks-grid { grid-template-columns: 1fr; }
+
+  /* Boutons formulaire — empilés */
+  .form-actions { grid-template-columns: 1fr; }
+
+  /* Galerie — 1 colonne */
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-item.wide,
   .gallery-item.tall {
     grid-column: span 1;
     grid-row: span 1;
   }
+
 }
