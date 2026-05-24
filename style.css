@@ -511,7 +511,7 @@ section {
 }
 
 .about-visual::after {
-  content: '16';
+  content: '17';
   position: absolute;
   bottom: -20px;
   right: -20px;
